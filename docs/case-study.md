@@ -4,7 +4,7 @@
 
 3M — Mood Music Machine — is an early AI/HCI prototype that recommends music from facial-expression context. It uses webcam input, facial emotion recognition, emotion-specific music datasets, clustering, and Spotify API integration.
 
-The project is valuable as a portfolio artifact because it begins a larger research arc: from recognizing human context to questioning how intelligent systems should protect the people they observe.
+The project begins a larger research arc: from recognizing human context to questioning how intelligent systems should protect the people they observe.
 
 ## Problem
 
@@ -86,7 +86,3 @@ The project is an older research artifact. A future cleanup pass should moderniz
 - Add an ethics note on emotion recognition limitations.
 - Replace or supplement webcam inference with explicit user control.
 - Connect the project visually to the later privacy research timeline.
-
-## Hiring relevance
-
-3M is strongest as an origin-story project for AI/HCI and research roles. It should not be over-positioned as current production ML work. Its value is showing curiosity, end-to-end prototyping, publication experience, and the beginning of a research direction that matured into privacy-preserving XR analytics.

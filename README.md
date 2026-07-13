@@ -1,100 +1,109 @@
-# 🎵 Mood-Based Music Recommendation via Facial Emotion Detection
+# 3M — Mood Music Machine
 
-This project is a full-stack prototype that recommends music based on the user’s facial emotion in real time. It integrates **OpenCV**, **deep learning**, and the **Spotify API** to provide emotion-specific song recommendations using live webcam input.
+**Emotion-aware music recommendation using facial-expression context.**
 
----
+3M is an early full-stack AI/HCI prototype that recommends music based on a user’s facial expression. It combines webcam-based emotion detection, a deep-learning classifier trained around FER-2013-style facial-expression categories, emotion-specific music datasets, clustering, and Spotify API integration.
 
-## 🧠 How It Works
+For the portfolio, this project is important because it marks the beginning of a larger research thread: using intelligent systems to understand human context carefully, then later asking how those systems can protect privacy instead of exposing people.
 
-1. The system captures live video using your webcam.
-2. It detects and classifies your facial expression (e.g., happy, sad, angry) using a deep learning model trained on the FER-2013 dataset.
-3. Based on the predicted emotion, it loads emotion-specific song datasets and clusters them using KMeans.
-4. Using the Spotify API, it recommends personalized tracks similar to your emotional context.
+## Research context
 
----
+This work is connected to the publication:
 
-## 📁 Project Structure
+> Arsha Sultana MD, Abdul Saherabegum, Akhila Umma, Jayasri Sai Nikitha Guthula (2021). **Music Recommendation Application Based on Facial Expressions.** *International Journal of Innovative Research in Information Security (IJIRIS)*, Volume 8, Issue 2, pp. 15–19.
 
+- [ResearchGate publication](https://www.researchgate.net/publication/387403799_Music_Recommendation_Application_Based_on_Facial_Expressions)
+- [IJIRIS Volume 8 Issue 2](https://ijiris.com/volume-8-issue-2)
+
+## Problem
+
+Most recommendation systems ask users to type, click, rate, or search. 3M explores a different interaction question:
+
+> Can software respond to a user’s immediate emotional context and recommend music that fits the moment?
+
+## How it works
+
+1. The system captures live webcam input.
+2. A face/emotion pipeline classifies the user’s facial expression, such as happy, sad, or angry.
+3. The predicted emotion selects an emotion-specific music dataset.
+4. Music features are clustered with KMeans.
+5. Spotify API integration is used to recommend tracks related to the detected mood context.
+
+## Project structure
+
+```text
+33M/
+├── angry.csv, happy.csv, sad.csv       Emotion-specific music datasets
+├── emotions.py                         Real-time facial emotion detector
+├── project_code.py                     Recommendation flow using Spotify + clustering
+├── index.html / login.html / register  Prototype web interface
+├── background.jiff, 3M.png             UI assets
+└── utils/                              Helper scripts and model utilities
 ```
-3M/
-├── 33M/
-│   ├── angry.csv, happy.csv, sad.csv       # Preprocessed emotion-specific music datasets
-│   ├── emotions.py                         # Real-time facial emotion detector
-│   ├── project_code.py                     # Song recommender using Spotify + clustering
-│   ├── index.html / login.html / register  # Frontend user interface
-│   ├── background.jiff, 3M.png             # Assets
-│   └── utils/                              # Helper scripts and model utils
-```
 
----
+## Tech stack
 
-## 🛠 Technologies Used
+- Python
+- PHP
+- HTML/CSS
+- OpenCV for face detection
+- Keras for emotion classification
+- scikit-learn for clustering and preprocessing
+- Spotipy / Spotify Web API
+- FER-2013-style facial-expression data
 
-- **Python**, **PHP**, **HTML/CSS**
-- **OpenCV** – for face detection
-- **Keras** – for emotion classification
-- **Spotipy (Spotify Web API)** – for track metadata and audio features
-- **scikit-learn** – for clustering and preprocessing
-- **FER-2013 Dataset** – for training emotion recognition model
+## Getting started
 
----
-
-## 🚀 Getting Started
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/3M.git
+git clone https://github.com/jayasrisng/3M.git
 cd 3M/33M
-```
-
-2. Install requirements:
-```bash
 pip install -r requirements.txt
 ```
 
-3. Set your Spotify credentials as environment variables:
+Set Spotify credentials before running recommendation code:
+
 ```bash
 export SPOTIPY_CLIENT_ID=your_id
 export SPOTIPY_CLIENT_SECRET=your_secret
 ```
 
-4. Run emotion detection:
+Run emotion detection:
+
 ```bash
 python emotions.py
 ```
 
-5. Based on detected emotion, call:
+Run the recommendation flow for a detected or selected emotion:
+
 ```bash
 python project_code.py happy
 ```
 
----
+## Portfolio case study
 
-## 🎯 Sample Emotions Recognized
+Read the full case study: [docs/case-study.md](docs/case-study.md)
 
-- Happy 😄
-- Sad 😢
-- Angry 😠
+## Media
 
-Each mood uses its corresponding CSV dataset and recommends songs accordingly.
+Media capture notes are tracked in [media/README.md](media/README.md).
 
----
+## Current limitations
 
+- This is early research/prototype code, not a production recommendation system.
+- Webcam-based emotion recognition can be biased, uncertain, and contextually incomplete.
+- Spotify credential setup and local environment configuration may need modernization.
+- The project should be treated as a historical research artifact and HCI prototype, not a finished commercial product.
 
-## 📄 License
+## Why it still matters
 
-MIT License — feel free to reuse and modify with credit.
+3M is useful on a portfolio because it shows the start of a coherent research direction:
 
----
+1. Recognize human context.
+2. Notice the privacy and identity risks of behavioral sensing.
+3. Build privacy-preserving systems for XR and embodied data.
 
-## 👤 Author
+That arc connects directly to later work in VR telemetry privacy, encrypted analytics, and human-centered XR systems.
 
-Created by [Jayasri](https://github.com/jayasrisng)  
-Built as a final project for intelligent systems + HCI coursework.
+## License
 
-**Citation**:  
-Arsha Sultana MD, Abdul Saherabegum, Akhila Umma, Jayasri Sai Nikitha Guthula (2021).  
-**Music Recommendation Application Based on Facial Expressions**.  
-*International Journal of Innovative Research in Information Security (IJIRIS)*, Volume 8, Issue 2, pp. 15–19.  
-📚 [Read on ResearchGate](https://www.researchgate.net/publication/387403799_Music_Recommendation_Application_Based_on_Facial_Expressions)  
-🌐 [Journal Issue](https://ijiris.com/volume-8-issue-2)
+MIT License — reuse and modify with credit.

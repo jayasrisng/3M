@@ -4,7 +4,7 @@
 
 3M is an early full-stack AI/HCI prototype that recommends music based on a user’s facial expression. It combines webcam-based emotion detection, a deep-learning classifier trained around FER-2013-style facial-expression categories, emotion-specific music datasets, clustering, and Spotify API integration.
 
-For the portfolio, this project is important because it marks the beginning of a larger research thread: using intelligent systems to understand human context carefully, then later asking how those systems can protect privacy instead of exposing people.
+The project marks the beginning of a larger research thread: using intelligent systems to understand human context carefully, then asking how those systems can protect privacy instead of exposing people.
 
 ## Research context
 
@@ -79,7 +79,7 @@ Run the recommendation flow for a detected or selected emotion:
 python project_code.py happy
 ```
 
-## Portfolio case study
+## Case study
 
 Read the full case study: [docs/case-study.md](docs/case-study.md)
 
@@ -96,7 +96,7 @@ Media capture notes are tracked in [media/README.md](media/README.md).
 
 ## Why it still matters
 
-3M is useful on a portfolio because it shows the start of a coherent research direction:
+3M shows the start of a coherent research direction:
 
 1. Recognize human context.
 2. Notice the privacy and identity risks of behavioral sensing.
